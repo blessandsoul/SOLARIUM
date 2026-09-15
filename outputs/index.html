@@ -92,6 +92,17 @@
         }
       }
 
+      /* Mobile needs a different crop: move the installation into frame instead of replaying the desktop crop. */
+      @keyframes scene-drift-mobile {
+        from {
+          background-position: 80% center;
+        }
+
+        to {
+          background-position: 85% center;
+        }
+      }
+
       .wordmark {
         width: fit-content;
         color: var(--cream);
@@ -193,13 +204,14 @@
         }
 
         .scene {
-          background-position: 68% center;
+          background-position: 82% center;
+          animation-name: scene-drift-mobile;
         }
 
         .landing::before {
           background:
-            linear-gradient(90deg, rgba(3, 18, 23, 0.93), rgba(3, 18, 23, 0.64)),
-            linear-gradient(0deg, rgba(2, 14, 18, 0.64), transparent 60%);
+            linear-gradient(0deg, rgba(2, 14, 18, 0.94) 0%, rgba(2, 14, 18, 0.78) 24%, rgba(2, 14, 18, 0.18) 60%, rgba(2, 14, 18, 0.12) 100%),
+            linear-gradient(90deg, rgba(3, 18, 23, 0.8) 0%, rgba(3, 18, 23, 0.44) 55%, rgba(3, 18, 23, 0.08) 100%);
         }
 
         .hero {
