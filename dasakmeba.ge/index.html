@@ -59,7 +59,7 @@
 
       .scene {
         z-index: -3;
-        background: url("./hero-career-desktop.png") 60% center / cover no-repeat;
+        background: url("./hero-workplace.png") 60% center / cover no-repeat;
         animation: scene-drift 20s ease-in-out infinite alternate;
         transform: scale(1.025);
       }
@@ -137,10 +137,9 @@
           padding: 1.5rem;
         }
 
-        /* The portrait art places the doorway high enough to clear the bottom copy. */
+        /* Keep the coworkers in the mobile crop; the lower shade protects the copy. */
         .scene {
-          background-image: url("./hero-career-mobile.png");
-          background-position: center;
+          background-position: 88% center;
           animation: none;
           transform: none;
         }
