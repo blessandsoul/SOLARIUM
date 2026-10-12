@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="dasakmeba.ge — დასაქმების ახალი სივრცე მალე გაიხსნება" />
+    <meta name="theme-color" content="#06181d" />
+    <title>dasakmeba.ge | მალე</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+Georgian:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #06181d;
+        --cream: #fff9ed;
+        --muted: #d3dbd6;
+        --gold: #f2b65c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-width: 320px;
+        background: var(--ink);
+      }
+
+      body {
+        min-height: 100svh;
+        margin: 0;
+        color: var(--cream);
+        background: var(--ink);
+        font-family: "Noto Sans Georgian", sans-serif;
+      }
+
+      .landing {
+        position: relative;
+        isolation: isolate;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(1.5rem, 4vw, 3.25rem) clamp(1.5rem, 6vw, 6.5rem);
+        overflow: hidden;
+      }
+
+      /* Decorative art stays behind the content; the shade keeps text readable at every crop. */
+      .scene,
+      .landing::before,
+      .landing::after {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .scene {
+        z-index: -3;
+        background: url("./hero-career-desktop.png") 60% center / cover no-repeat;
+        animation: scene-drift 20s ease-in-out infinite alternate;
+        transform: scale(1.025);
+      }
+
+      .landing::before {
+        z-index: -2;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(3, 18, 23, 0.98) 0%, rgba(3, 18, 23, 0.89) 27%, rgba(3, 18, 23, 0.56) 51%, rgba(3, 18, 23, 0.08) 76%),
+          linear-gradient(0deg, rgba(2, 14, 18, 0.58), transparent 46%);
+      }
+
+      .landing::after {
+        z-index: -1;
+        content: "";
+        background: radial-gradient(ellipse at 76% 0%, rgba(252, 194, 104, 0.14), transparent 35%);
+      }
+
+      @keyframes scene-drift {
+        from { background-position: 58% center; }
+        to { background-position: 63% center; }
+      }
+
+      .wordmark {
+        width: fit-content;
+        color: var(--cream);
+        font-family: "Manrope", sans-serif;
+        font-size: clamp(1.15rem, 2vw, 1.4rem);
+        font-weight: 800;
+        letter-spacing: -0.075em;
+        line-height: 1;
+        text-transform: lowercase;
+      }
+
+      .wordmark::after {
+        content: "";
+        width: 2.45rem;
+        height: 2px;
+        display: block;
+        margin-top: 0.8rem;
+        background: var(--gold);
+      }
+
+      .hero {
+        width: min(100%, 40rem);
+        margin: auto 0;
+        padding: 4rem 0 3rem;
+      }
+
+      h1,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 8ch;
+        color: var(--cream);
+        font-size: clamp(3.45rem, 9.2vw, 7.6rem);
+        font-weight: 800;
+        letter-spacing: -0.09em;
+        line-height: 0.97;
+      }
+
+      .statement {
+        max-width: 34rem;
+        margin-top: clamp(1.5rem, 3vw, 2.15rem);
+        color: var(--muted);
+        font-size: clamp(1rem, 1.85vw, 1.22rem);
+        font-weight: 500;
+        line-height: 1.72;
+      }
+
+      @media (max-width: 680px) {
+        .landing {
+          padding: 1.5rem;
+        }
+
+        /* The portrait art places the doorway high enough to clear the bottom copy. */
+        .scene {
+          background-image: url("./hero-career-mobile.png");
+          background-position: center;
+          animation: none;
+          transform: none;
+        }
+
+        .landing::before {
+          background:
+            linear-gradient(0deg, rgba(2, 14, 18, 0.94) 0%, rgba(2, 14, 18, 0.78) 24%, rgba(2, 14, 18, 0.18) 60%, rgba(2, 14, 18, 0.12) 100%),
+            linear-gradient(90deg, rgba(3, 18, 23, 0.8) 0%, rgba(3, 18, 23, 0.44) 55%, rgba(3, 18, 23, 0.08) 100%);
+        }
+
+        .hero {
+          margin: auto 0 0;
+          padding: 3.5rem 0 2rem;
+        }
+
+        h1 {
+          font-size: clamp(3.45rem, 16vw, 5.2rem);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .scene {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="landing">
+      <div class="scene" aria-hidden="true"></div>
+      <div class="wordmark" aria-label="dasakmeba.ge">dasakmeba.ge</div>
+      <section class="hero" aria-label="მალე">
+        <h1>მალე…</h1>
+        <p class="statement">დასაქმების ახალი სივრცე მალე გაიხსნება</p>
+      </section>
+    </main>
+  </body>
+</html>
