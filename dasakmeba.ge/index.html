@@ -1,180 +1,117 @@
 <!doctype html>
 <html lang="ka">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="dasakmeba.ge — დასაქმების ახალი სივრცე მალე გაიხსნება" />
-    <meta name="theme-color" content="#06181d" />
-    <title>dasakmeba.ge | მალე</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+Georgian:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --ink: #06181d;
-        --cream: #fff9ed;
-        --muted: #d3dbd6;
-        --gold: #f2b65c;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        min-width: 320px;
-        background: var(--ink);
-      }
-
-      body {
-        min-height: 100svh;
-        margin: 0;
-        color: var(--cream);
-        background: var(--ink);
-        font-family: "Noto Sans Georgian", sans-serif;
-      }
-
-      .landing {
-        position: relative;
-        isolation: isolate;
-        min-height: 100svh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: clamp(1.5rem, 4vw, 3.25rem) clamp(1.5rem, 6vw, 6.5rem);
-        overflow: hidden;
-      }
-
-      /* Decorative art stays behind the content; the shade keeps text readable at every crop. */
-      .scene,
-      .landing::before,
-      .landing::after {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-      }
-
-      .scene {
-        z-index: -3;
-        background: url("./hero-workplace.png") 60% center / cover no-repeat;
-        animation: scene-drift 20s ease-in-out infinite alternate;
-        transform: scale(1.025);
-      }
-
-      .landing::before {
-        z-index: -2;
-        content: "";
-        background:
-          linear-gradient(90deg, rgba(3, 18, 23, 0.98) 0%, rgba(3, 18, 23, 0.89) 27%, rgba(3, 18, 23, 0.56) 51%, rgba(3, 18, 23, 0.08) 76%),
-          linear-gradient(0deg, rgba(2, 14, 18, 0.58), transparent 46%);
-      }
-
-      .landing::after {
-        z-index: -1;
-        content: "";
-        background: radial-gradient(ellipse at 76% 0%, rgba(252, 194, 104, 0.14), transparent 35%);
-      }
-
-      @keyframes scene-drift {
-        from { background-position: 58% center; }
-        to { background-position: 63% center; }
-      }
-
-      .wordmark {
-        width: fit-content;
-        color: var(--cream);
-        font-family: "Manrope", sans-serif;
-        font-size: clamp(1.15rem, 2vw, 1.4rem);
-        font-weight: 800;
-        letter-spacing: -0.075em;
-        line-height: 1;
-        text-transform: lowercase;
-      }
-
-      .wordmark::after {
-        content: "";
-        width: 2.45rem;
-        height: 2px;
-        display: block;
-        margin-top: 0.8rem;
-        background: var(--gold);
-      }
-
-      .hero {
-        width: min(100%, 40rem);
-        margin: auto 0;
-        padding: 4rem 0 3rem;
-      }
-
-      h1,
-      p {
-        margin: 0;
-      }
-
-      h1 {
-        max-width: 8ch;
-        color: var(--cream);
-        font-size: clamp(3.45rem, 9.2vw, 7.6rem);
-        font-weight: 800;
-        letter-spacing: -0.09em;
-        line-height: 0.97;
-      }
-
-      .statement {
-        max-width: 34rem;
-        margin-top: clamp(1.5rem, 3vw, 2.15rem);
-        color: var(--muted);
-        font-size: clamp(1rem, 1.85vw, 1.22rem);
-        font-weight: 500;
-        line-height: 1.72;
-      }
-
-      @media (max-width: 680px) {
-        .landing {
-          padding: 1.5rem;
-        }
-
-        /* Keep the coworkers in the mobile crop; the lower shade protects the copy. */
-        .scene {
-          background-position: 88% center;
-          animation: none;
-          transform: none;
-        }
-
-        .landing::before {
-          background:
-            linear-gradient(0deg, rgba(2, 14, 18, 0.94) 0%, rgba(2, 14, 18, 0.78) 24%, rgba(2, 14, 18, 0.18) 60%, rgba(2, 14, 18, 0.12) 100%),
-            linear-gradient(90deg, rgba(3, 18, 23, 0.8) 0%, rgba(3, 18, 23, 0.44) 55%, rgba(3, 18, 23, 0.08) 100%);
-        }
-
-        .hero {
-          margin: auto 0 0;
-          padding: 3.5rem 0 2rem;
-        }
-
-        h1 {
-          font-size: clamp(3.45rem, 16vw, 5.2rem);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .scene {
-          animation: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main class="landing">
-      <div class="scene" aria-hidden="true"></div>
-      <div class="wordmark" aria-label="dasakmeba.ge">dasakmeba.ge</div>
-      <section class="hero" aria-label="მალე">
-        <h1>მალე…</h1>
-        <p class="statement">დასაქმების ახალი სივრცე მალე გაიხსნება</p>
-      </section>
-    </main>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f9ff">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="dasakmeba.ge — ვაკანსიების მოძიება და სამუშაო პროცესების მართვა ერთ პლატფორმაზე. საიტი მზადების პროცესშია.">
+  <title>დასაქმება — მალე გავიხსნებით</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <div class="wrap">
+      <header>
+        <a class="brand" href="#top" aria-label="Dasakmeba.ge — მთავარი"><span class="brandmark" aria-hidden="true">D</span><span>Dasakmeba.ge</span></a>
+        <nav aria-label="მთავარი ნავიგაცია">
+          <a href="jobs.html">ვაკანსიები</a>
+          <a href="#contact">დამსაქმებლებისთვის</a>
+          <span class="nav-register">რეგისტრაცია <small>(მალე)</small></span>
+        </nav>
+      </header>
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            
+            <h1 id="hero-title">დასაქმების ახალი სტანდარტი</h1>
+            <p class="lead">იპოვე სასურველი სამსახური ან მართე რეკრუტინგის სრული პროცესი — ყველაფერი ერთ თანამედროვე პლატფორმაზე.</p>
+            <div class="eyebrow"><span class="pulse"></span> საიტი მზადების პროცესშია</div>
+            <div class="contact-row">
+              <a class="button button-primary" href="#contact"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="m4.5 7 7.5 5.5L19.5 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>შემატყობინე გაშვებისას</a>
+              <a class="button button-secondary" href="jobs.html"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>ვაკანსიების ნახვა</a>
+            </div>
+          </div>
+          <div class="art" aria-label="ვაკანსიების ძიების მომავალი გვერდის ილუსტრაცია">
+            <div class="orbit"></div><span class="spark one" aria-hidden="true">✳</span><span class="spark two" aria-hidden="true">✦</span>
+            <div class="float-card top"><span class="float-icon">↗</span><span>პროცესების მართვა<span class="float-sub">სამუშაოს ორგანიზება ერთ სივრცეში</span></span></div>
+            <div class="search-card">
+              <div class="search-head"><div class="search-title">ერთიანი პლატფორმა</div><div class="soon-tag">დემო</div></div><div class="product-tabs" aria-label="პლატფორმის მიმართულებების წინასწარი ხედვა"><span class="tab active">ვაკანსიები</span><span class="tab">პროცესების მართვა</span></div>
+              <div class="preview-note" role="status"><span class="preview-icon" aria-hidden="true">◷</span><span class="preview-copy"><strong>საძიებო ფორმა დემოა.</strong><br>რეალური ვაკანსიების ძიება მალე ამოქმედდება.</span></div>
+              <label class="field-label" for="position-search">პოზიციის ან საკვანძო სიტყვის ძიება</label>
+              <div class="field demo-field"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><input id="position-search" type="search" placeholder="თანამდებობა ან საკვანძო სიტყვა" disabled></div>
+              <label class="field-label" for="location-select">ქალაქის ან დისტანციური სამუშაოს არჩევა</label>
+              <div class="field demo-field"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10.2c0 5-7 10-7 10s-7-5-7-10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.2" stroke="currentColor" stroke-width="1.7"/></svg><select id="location-select" disabled><option>ქალაქი ან დისტანციური სამუშაო</option></select><svg class="select-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 6 5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="filter-grid">
+                <label><span>სამუშაო ფორმატი</span><div class="field demo-field"><select aria-label="სამუშაო ფორმატი" disabled><option>აირჩიე ფორმატი</option></select><svg class="select-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 6 5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></label>
+                <label><span>ხელფასის დიაპაზონი</span><div class="field demo-field"><select aria-label="ხელფასის დიაპაზონი" disabled><option>აირჩიე დიაპაზონი</option></select><svg class="select-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m3 6 5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></label>
+              </div>
+              <button class="search-button" type="button" id="preview-search-button">ვაკანსიის ძიება</button>
+              <p class="search-feedback" id="search-feedback" role="status" aria-live="polite" hidden>ვაკანსიების ძიების ფუნქცია მალე გახდება ხელმისაწვდომი. <a href="#contact">დატოვე ელფოსტა</a> და პირველმა გაიგე პლატფორმის გაშვების შესახებ.</p>
+              <div class="card-divider"></div>
+              <div class="card-foot"><span>ვაკანსიები და პროცესები — ერთ სივრცეში</span></div>
+            </div>
+          </div>
+        </section>
+        <section class="strip" id="directions" aria-label="ვაკანსიების მიმართულებები">
+          <div class="strip-title">იპოვე ვაკანსია · მართე პროცესები</div>
+          <div class="chips"><span class="chip"><span></span>ვაკანსიების ძიება</span><span class="chip"><span></span>AI რეკრუტინგი</span><span class="chip"><span></span>პროცესების მართვა</span></div>
+        </section>
+        <section class="below" id="contact">
+          <div><h2>იყავი პირველი, ვინც გაიგებს!</h2><p>დატოვე ელფოსტა და პირველმა მიიღე ინფორმაცია dasakmeba.ge-ს გაშვებისა და ახალი შესაძლებლობების შესახებ.</p></div>
+          <div>
+            <div class="contact-card notify-card">
+              <small>გაშვების შეტყობინება</small>
+              <h3>შემოგვიერთდი პირველებს შორის</h3>
+              <p>მიიღე ინფორმაცია პლატფორმის გახსნისა და ახალი შესაძლებლობების შესახებ.</p>
+              <form class="notify-form" id="launch-notify" action="mailto:gamarjoba@dasakmeba.ge" method="post" enctype="text/plain">
+                <label for="notify-email">ელფოსტის მისამართი</label>
+                <div class="notify-row"><input id="notify-email" name="email" type="email" autocomplete="email" placeholder="შენი ელფოსტა" required><button type="submit">შემატყობინე</button></div>
+                <label class="notify-consent"><input type="checkbox" name="consent" required><span>ვეთანხმები, მივიღო dasakmeba.ge-ს სიახლეები.</span></label>
+                <p class="notify-privacy">გაგზავნა ელფოსტის აპიდან ხდება. გასაუქმებლად მოგვწერე <a href="mailto:gamarjoba@dasakmeba.ge">gamarjoba@dasakmeba.ge</a>-ზე.</p>
+                <p class="notify-status" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer><span>მალე გავიხსნებით — 2027 წელს.</span></footer>
+    </div>
+  </div>
+  <script>
+    // Clear the old preview anchor so saved #jobs-search links open at the top.
+    const pageNavigation = performance.getEntriesByType('navigation')[0];
+    if (window.location.hash === '#jobs-search') {
+      try { window.history.replaceState(null, '', window.location.pathname + window.location.search); } catch (error) {}
+      window.scrollTo(0, 0);
+    } else if (!window.location.hash && pageNavigation && pageNavigation.type === 'reload') {
+      window.scrollTo(0, 0);
+    }
+    document.getElementById('preview-search-button').addEventListener('click', function () {
+      document.getElementById('search-feedback').hidden = false;
+    });
+document.getElementById('launch-notify').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const email = this.elements.email.value.trim();
+      const subject = encodeURIComponent('შეგვატყობინე dasakmeba.ge-ს გაშვებისას');
+      const body = encodeURIComponent('თანახმა ვარ მივიღო სიახლეები dasakmeba.ge-ს გაშვებისა და ახალი შესაძლებლობების შესახებ.\n\nჩემი ელფოსტა: ' + email + '\n\nგამოწერის გაუქმებას მოვითხოვ ელფოსტით.');
+      this.querySelector('.notify-status').textContent = 'ელფოსტის აპში გასაგზავნი წერილი გაიხსნა. რეგისტრაციის დასასრულებლად წერილი გააგზავნე.';
+      window.location.href = 'mailto:gamarjoba@dasakmeba.ge?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

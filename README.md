@@ -1,13 +1,14 @@
 # SOLARIUM
 
-Standalone coming-soon pages for `solarium.ge` and `dasakmeba.ge`.
+Static websites for `solarium.ge` and `dasakmeba.ge` (plain HTML/CSS, no build step).
 
 ## Coolify
 
 Deploy this repository with Coolify's **Static** build pack. Use a separate
 application per domain so each app can select its own **Base Directory**:
 
-- `solarium.ge`: `/outputs`
-- `dasakmeba.ge`: `/dasakmeba.ge`
+- `solarium.ge`: `/outputs` (`index.html`, artwork, favicon)
+- `dasakmeba.ge`: `/dasakmeba.ge` (`index.html`, `jobs.html`, `styles.css`, `fonts/`)
 
-Both folders contain a standalone `index.html` and locally hosted hero artwork.
+To update a site, replace the files in its folder, push to `main`, and redeploy
+that application.

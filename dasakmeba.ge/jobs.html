@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8FAFC">
+  <meta name="description" content="dasakmeba.ge — ვაკანსიების ძიების წინასწარი დემო.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <title>ვაკანსიების ძიება — Dasakmeba.ge</title>
+</head>
+<body>
+  <div class="page">
+    <div class="wrap">
+      <header>
+        <a class="brand" href="index.html" aria-label="Dasakmeba.ge — მთავარი"><span class="brandmark" aria-hidden="true">D</span><span>Dasakmeba.ge</span></a>
+        <nav aria-label="მთავარი ნავიგაცია">
+          <a href="jobs.html" aria-current="page">ვაკანსიები</a>
+          <a href="index.html#contact">დამსაქმებლებისთვის</a>
+          <span class="nav-register">რეგისტრაცია <small>(მალე)</small></span>
+        </nav>
+      </header>
+    </div>
+    <main class="jobs-shell">
+      <div class="preview-note jobs-demo-note" role="status"><span class="preview-icon" aria-hidden="true">i</span><span><strong>საძიებო გვერდის დემო ვერსია</strong><br>ფილტრები ნიმუშ ვაკანსიებზე მუშაობს. რეალური განცხადებები პლატფორმის გახსნისას დაემატება.</span></div>
+      <h1 class="jobs-heading">იპოვე შენთვის შესაფერისი სამსახური</h1>
+      <p class="jobs-intro">მოძებნე პოზიცია, მიუთითე ქალაქი და დააზუსტე შედეგები ფილტრებით.</p>
+      <div class="jobs-content">
+      <form class="jobs-query" id="jobs-search-form">
+        <div class="jobs-field"><label for="keyword">პოზიცია ან საკვანძო სიტყვა</label><input id="keyword" type="search" placeholder="მაგ. დიზაინერი, მარკეტინგი" autocomplete="off"></div>
+        <div class="jobs-field"><label for="city">ქალაქი ან სამუშაო ადგილი</label><select id="city"><option value="">ყველა ადგილი</option><option value="თბილისი">თბილისი</option><option value="დისტანციური">დისტანციური</option><option value="ბათუმი">ბათუმი</option></select></div>
+        <button type="submit" id="search-submit">ვაკანსიის ძიება</button>
+      </form>
+      <div class="jobs-layout">
+        <aside class="filters-panel" aria-label="ვაკანსიების ფილტრები">
+          <div class="filters-heading"><h2>ფილტრები</h2><button class="clear-filters" type="button" id="clear-filters">გასუფთავება</button></div>
+          <div class="filter-control"><label for="salary-min">ხელფასი, ₾ თვეში</label><div class="salary-range"><input id="salary-min" type="number" min="0" inputmode="numeric" placeholder="მინ."><input id="salary-max" type="number" min="0" inputmode="numeric" placeholder="მაქს."></div></div>
+          <div class="filter-control"><label for="work-format">სამუშაო ფორმატი</label><select id="work-format"><option value="">ყველა ფორმატი</option><option value="ოფისიდან">ოფისიდან</option><option value="ჰიბრიდული">ჰიბრიდული</option><option value="დისტანციური">დისტანციური</option></select></div>
+          <div class="filter-control"><label for="employment-type">დასაქმების ტიპი</label><select id="employment-type"><option value="">ყველა ტიპი</option><option value="სრული განაკვეთი">სრული განაკვეთი</option><option value="ნახევარი განაკვეთი">ნახევარი განაკვეთი</option><option value="კონტრაქტი">კონტრაქტი</option><option value="სტაჟირება">სტაჟირება</option></select></div>
+          <details class="more-filters">
+            <summary>დამატებითი ფილტრები</summary>
+            <div class="filter-control"><label for="experience">გამოცდილება</label><select id="experience"><option value="">ნებისმიერი</option><option value="დამწყები">დამწყები</option><option value="საშუალო">საშუალო</option><option value="გამოცდილი">გამოცდილი</option></select></div>
+            <div class="filter-control"><label for="category">მიმართულება</label><select id="category"><option value="">ყველა მიმართულება</option><option value="დიზაინი">დიზაინი</option><option value="HR">HR</option><option value="ტექნოლოგიები">ტექნოლოგიები</option></select></div>
+          </details>
+        </aside>
+        <section class="results-column" aria-label="ვაკანსიების შედეგები">
+          <div class="results-toolbar"><div><p class="results-count" id="results-count" aria-live="polite">6 სადემონსტრაციო ვაკანსია</p><p class="results-caption">საჩვენებელი ჩანაწერები მხოლოდ დიზაინის დემოა</p></div><label class="sort-control" for="sort-by">დალაგება <select id="sort-by"><option value="recommended">რეკომენდებული</option><option value="salary-asc">ხელფასი: დაბლიდან</option><option value="salary-desc">ხელფასი: მაღლიდან</option></select></label></div>
+          <div class="active-filters" id="active-filters" aria-label="აქტიური ფილტრები"></div>
+          <div class="jobs-loading" id="jobs-loading" hidden><span class="spinner" aria-hidden="true"></span>დემო შედეგები ახლდება…</div>
+          <div class="job-list" id="job-list">
+            <article class="job-card" data-title="პროდუქტის დიზაინერი" data-company="Sample Studio" data-city="თბილისი" data-format="ჰიბრიდული" data-type="სრული განაკვეთი" data-salary-min="2500" data-salary-max="3500" data-experience="საშუალო" data-category="დიზაინი">
+              <div class="job-card-top"><span class="job-demo-tag">სადემონსტრაციო</span><span class="job-demo-tag">ჰიბრიდული</span></div><p class="job-company">Sample Studio · დემო</p><h2 class="job-title">პროდუქტის დიზაინერი</h2>
+              <div class="job-meta"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10.2c0 5-7 10-7 10s-7-5-7-10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.2" stroke="currentColor" stroke-width="1.7"/></svg>თბილისი</span><span>სრული განაკვეთი</span><span>საშუალო გამოცდილება</span></div><div class="job-card-bottom"><p class="job-salary">2,500–3,500 ₾ / თვე</p><button class="save-job" type="button" aria-pressed="false">შენახვა</button></div>
+            </article>
+            <article class="job-card" data-title="HR სპეციალისტი" data-company="People Demo" data-city="დისტანციური" data-format="დისტანციური" data-type="სრული განაკვეთი" data-salary-min="1800" data-salary-max="2600" data-experience="დამწყები" data-category="HR">
+              <div class="job-card-top"><span class="job-demo-tag">სადემონსტრაციო</span><span class="job-demo-tag">დისტანციური</span></div><p class="job-company">People Demo · დემო</p><h2 class="job-title">HR სპეციალისტი</h2>
+              <div class="job-meta"><span>დისტანციური</span><span>სრული განაკვეთი</span><span>დამწყები</span></div><div class="job-card-bottom"><p class="job-salary">1,800–2,600 ₾ / თვე</p><button class="save-job" type="button" aria-pressed="false">შენახვა</button></div>
+            </article>
+            <article class="job-card" data-title="ფრონტენდ დეველოპერი" data-company="Demo Tech" data-city="თბილისი" data-format="ოფისიდან" data-type="კონტრაქტი" data-salary-min="3500" data-salary-max="5000" data-experience="გამოცდილი" data-category="ტექნოლოგიები">
+              <div class="job-card-top"><span class="job-demo-tag">სადემონსტრაციო</span><span class="job-demo-tag">კონტრაქტი</span></div><p class="job-company">Demo Tech · დემო</p><h2 class="job-title">ფრონტენდ დეველოპერი</h2>
+              <div class="job-meta"><span>თბილისი · ოფისიდან</span><span>კონტრაქტი</span><span>გამოცდილი</span></div><div class="job-card-bottom"><p class="job-salary">3,500–5,000 ₾ / თვე</p><button class="save-job" type="button" aria-pressed="false">შენახვა</button></div>
+            </article>
+            <article class="job-card" data-title="UX მკვლევარი" data-company="Northstar Demo" data-city="თბილისი" data-format="ჰიბრიდული" data-type="სრული განაკვეთი" data-salary-min="2800" data-salary-max="4000" data-experience="საშუალო" data-category="დიზაინი">
+              <div class="job-card-top"><span class="job-demo-tag">სადემონსტრაციო</span><span class="job-demo-tag">ჰიბრიდული</span></div><p class="job-company">Northstar Demo · დემო</p><h2 class="job-title">UX მკვლევარი</h2>
+              <div class="job-meta"><span>თბილისი</span><span>სრული განაკვეთი</span><span>საშუალო გამოცდილება</span></div><div class="job-card-bottom"><p class="job-salary">2,800–4,000 ₾ / თვე</p><button class="save-job" type="button" aria-pressed="false">შენახვა</button></div>
+            </article>
+            <article class="job-card" data-title="ტალანტების მოზიდვის სპეციალისტი" data-company="People Demo" data-city="ბათუმი" data-format="ოფისიდან" data-type="სრული განაკვეთი" data-salary-min="2200" data-salary-max="3200" data-experience="გამოცდილი" data-category="HR">
+              <div class="job-card-top"><span class="job-demo-tag">სადემონსტრაციო</span><span class="job-demo-tag">ოფისიდან</span></div><p class="job-company">People Demo · დემო</p><h2 class="job-title">ტალანტების მოზიდვის სპეციალისტი</h2>
+              <div class="job-meta"><span>ბათუმი</span><span>სრული განაკვეთი</span><span>გამოცდილი</span></div><div class="job-card-bottom"><p class="job-salary">2,200–3,200 ₾ / თვე</p><button class="save-job" type="button" aria-pressed="false">შენახვა</button></div>
+            </article>
+            <article class="job-card" data-title="Backend დეველოპერი" data-company="Demo Labs" data-city="დისტანციური" data-format="დისტანციური" data-type="სრული განაკვეთი" data-salary-min="4500" data-salary-max="6500" data-experience="გამოცდილი" data-category="ტექნოლოგიები">
+              <div class="job-card-top"><span class="job-demo-tag">სადემონსტრაციო</span><span class="job-demo-tag">დისტანციური</span></div><p class="job-company">Demo Labs · დემო</p><h2 class="job-title">Backend დეველოპერი</h2>
+              <div class="job-meta"><span>დისტანციური</span><span>სრული განაკვეთი</span><span>გამოცდილი</span></div><div class="job-card-bottom"><p class="job-salary">4,500–6,500 ₾ / თვე</p><button class="save-job" type="button" aria-pressed="false">შენახვა</button></div>
+            </article>
+          </div>
+          <div class="jobs-empty" id="jobs-empty" hidden><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2"/><path d="m29 29 10 10M15 20h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><h2>შედეგები ვერ მოიძებნა</h2><p>შეცვალე საძიებო სიტყვა ან გაასუფთავე ფილტრები და თავიდან სცადე.</p><button type="button" id="empty-clear">ფილტრების გასუფთავება</button></div>
+        </section>
+      </div>
+      </div>
+    </main>
+    <div class="wrap"><footer><span>მალე გავიხსნებით — 2027 წელს.</span></footer></div>
+  </div>
+  <script>
+    const form=document.getElementById('jobs-search-form');
+    const controls={keyword:document.getElementById('keyword'),city:document.getElementById('city'),min:document.getElementById('salary-min'),max:document.getElementById('salary-max'),format:document.getElementById('work-format'),type:document.getElementById('employment-type'),experience:document.getElementById('experience'),category:document.getElementById('category')};
+    const jobs=[...document.querySelectorAll('.job-card')],count=document.getElementById('results-count'),list=document.getElementById('job-list'),empty=document.getElementById('jobs-empty'),loading=document.getElementById('jobs-loading'),submit=document.getElementById('search-submit'),chips=document.getElementById('active-filters');
+    const labels={keyword:'ძიება',city:'ადგილი',min:'მინ. ხელფასი',max:'მაქს. ხელფასი',format:'ფორმატი',type:'დასაქმება',experience:'გამოცდილება',category:'მიმართულება'};
+    let pendingSearch;
+    function currentFilters(){return Object.fromEntries(Object.entries(controls).map(([key,node])=>[key,node.value.trim()]));}
+    function filteredJobs(){const f=currentFilters();return jobs.filter(card=>{const d=card.dataset,hay=(d.title+' '+d.company).toLocaleLowerCase('ka');return (!f.keyword||hay.includes(f.keyword.toLocaleLowerCase('ka')))&&(!f.city||d.city===f.city)&&(!f.min||Number(d.salaryMax)>=Number(f.min))&&(!f.max||Number(d.salaryMin)<=Number(f.max))&&(!f.format||d.format===f.format)&&(!f.type||d.type===f.type)&&(!f.experience||d.experience===f.experience)&&(!f.category||d.category===f.category);});}
+    function paintChips(){chips.replaceChildren();for(const [key,value] of Object.entries(currentFilters()))if(value){const chip=document.createElement('span');chip.className='filter-chip';chip.append(document.createTextNode(`${labels[key]}: ${value}`));const remove=document.createElement('button');remove.type='button';remove.setAttribute('aria-label',`${labels[key]} ფილტრის წაშლა`);remove.textContent='×';remove.addEventListener('click',()=>{controls[key].value='';update(false);});chip.append(remove);chips.append(chip);}}
+    function update(showLoading=true){window.clearTimeout(pendingSearch);const render=()=>{const matches=filteredJobs(),mode=document.getElementById('sort-by').value;if(mode==='salary-asc')matches.sort((a,b)=>Number(a.dataset.salaryMin)-Number(b.dataset.salaryMin));if(mode==='salary-desc')matches.sort((a,b)=>Number(b.dataset.salaryMax)-Number(a.dataset.salaryMax));for(const card of jobs){const visible=matches.includes(card);card.hidden=!visible;if(visible)list.append(card);}count.textContent=`${matches.length} სადემონსტრაციო ვაკანსია`;empty.hidden=matches.length>0;paintChips();loading.hidden=true;list.removeAttribute('aria-busy');submit.removeAttribute('aria-busy');submit.disabled=false;submit.textContent='ვაკანსიის ძიება';};if(!showLoading){render();return;}loading.hidden=false;list.setAttribute('aria-busy','true');submit.setAttribute('aria-busy','true');submit.disabled=true;submit.textContent='იძებნება';pendingSearch=window.setTimeout(render,260);}
+    form.addEventListener('submit',event=>{event.preventDefault();update(true);});
+    for(const control of Object.values(controls))control.addEventListener('change',()=>update(true));
+    controls.keyword.addEventListener('input',()=>{window.clearTimeout(pendingSearch);pendingSearch=window.setTimeout(()=>update(true),320);});
+    document.getElementById('sort-by').addEventListener('change',()=>update(false));
+    function clearAll(){for(const control of Object.values(controls))control.value='';update(false);}
+    document.getElementById('clear-filters').addEventListener('click',clearAll);document.getElementById('empty-clear').addEventListener('click',clearAll);
+    document.querySelectorAll('.save-job').forEach(button=>button.addEventListener('click',()=>{const saved=button.getAttribute('aria-pressed')==='true';button.setAttribute('aria-pressed',String(!saved));button.textContent=saved?'შენახვა':'შენახულია';}));
+  </script>
+</body>
+</html>

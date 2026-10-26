@@ -1,271 +1,122 @@
 <!doctype html>
 <html lang="ka">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="solarium.ge — სოლარიუმების ყველაზე დიდი იმპორტიორი საქართველოში"
-    />
-    <title>solarium.ge | მალე</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+Georgian:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --ink: #06181d;
-        --cream: #fff9ed;
-        --muted: #d3dbd6;
-        --gold: #f2b65c;
-        --green: #2cb876;
-        --green-bright: #45d987;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f5">
+  <meta name="description" content="Solarium.ge — ვერტიკალური და ჰორიზონტალური სოლარიუმები მალე.">
+  <title>Solarium.ge — Coming Soon</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Dancing+Script:wght@600;700&family=Noto+Sans+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f8f5;
+      --ink: #20211f;
+      --muted: #777873;
+      --line: #deded8;
+      --sun: #d9a650;
+      font-family: "Noto Sans Georgian", "DM Sans", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+    * { box-sizing: border-box; }
+    html { min-width: 320px; min-height: 100%; background: var(--paper); }
+    body { min-width: 320px; min-height: 100svh; margin: 0; color: var(--ink); background: var(--paper); }
+    .page { width: min(100%, 1500px); margin: 0 auto; padding: 0 clamp(20px, 6.3vw, 96px); }
+    .masthead { display: flex; min-height: 94px; align-items: center; justify-content: center; border-bottom: 1px solid var(--line); }
+    .wordmark { display: inline-flex; align-items: center; gap: 12px; font-family: "DM Sans", sans-serif; font-size: clamp(24px, 3vw, 34px); font-weight: 600; letter-spacing: -.04em; }
+    .sun-mark { display: block; width: clamp(31px, 3.5vw, 40px); height: clamp(31px, 3.5vw, 40px); flex: none; color: var(--sun); }
+    .wordmark .name span { color: var(--sun); }
+    main { padding: clamp(23px, 3.8vw, 53px) 0 48px; }
+    .products { display: grid; grid-template-columns: minmax(0, 1fr); align-items: stretch; gap: 0; }
+    .product { width: min(100%, 1100px); min-width: 0; margin: 0; justify-self: center; }
+    .product-art { display: grid; aspect-ratio: 3 / 2; place-items: center; overflow: visible; background: transparent; }
+    .product img { display: block; width: 94%; height: auto; object-fit: contain; filter: drop-shadow(0 16px 24px rgba(76, 57, 35, .12)); }
+    .soon { margin: 9px 0 0; font-family: "DM Sans", sans-serif; font-size: clamp(45px, 7.92vw, 104.4px); font-weight: 500; line-height: .95; letter-spacing: -.075em; text-align: center; }
+    .tagline { margin: 14px 0 clamp(22px, 3vw, 40px); color: var(--muted); font-family: "DM Sans", sans-serif; font-size: clamp(14.4px, 1.68vw, 19.2px); font-weight: 400; letter-spacing: .005em; line-height: 1.5; text-align: center; text-wrap: balance; }
+    .contact { display: grid; justify-items: center; gap: 13px; margin-top: clamp(30px, 4vw, 48px); font-family: "DM Sans", "Noto Sans Georgian", sans-serif; }
+    .email { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-size: clamp(16px, 2vw, 19px); font-weight: 400; }
+    .email svg { width: 19px; height: 19px; flex: none; color: var(--sun); }
+    .phone { display: inline-flex; align-items: center; gap: 10px; color: var(--muted); font-size: 15px; letter-spacing: .07em; }
+    .phone svg { width: 19px; height: 19px; flex: none; color: var(--sun); }
+    .brands { display: flex; min-height: 112px; align-items: center; justify-content: center; gap: clamp(38px, 8vw, 112px); margin-top: clamp(46px, 7vw, 84px); padding-top: 25px; border-top: 1px solid var(--line); }
+    .brand { display: grid; justify-items: center; color: #3c3e3b; }
+    .brand.luxura { font-family: "DM Sans", sans-serif; font-size: clamp(26px, 4vw, 42px); font-weight: 500; letter-spacing: .075em; }
+    .brand.luxura small { margin-top: -2px; color: var(--sun); font-size: 8px; font-weight: 500; letter-spacing: .19em; }
+    .brand.ergoline { color: inherit; font-family: "Dancing Script", cursive; font-size: clamp(33px, 5vw, 52px); font-weight: 700; letter-spacing: -.04em; }
+    .brand.megasun { display: inline-flex; align-items: center; gap: 8px; color: inherit; font-family: "DM Sans", sans-serif; font-size: clamp(24px, 3.5vw, 36px); font-weight: 600; letter-spacing: -.065em; white-space: nowrap; }
+    .brand.megasun svg { width: clamp(21px, 2.6vw, 28px); height: clamp(21px, 2.6vw, 28px); flex: none; }
+    .brand.megasun .sun-word { color: var(--sun); }
+    .brand.megasun sup { align-self: flex-start; margin: 7px 0 0 -5px; font-size: 9px; letter-spacing: 0; }
+    .brand.soltron { display: inline-flex; align-items: center; gap: 7px; color: inherit; font-family: "Dancing Script", cursive; font-size: clamp(30px, 4vw, 42px); font-weight: 700; letter-spacing: -.035em; }
+    .brand.soltron svg { width: 22px; height: 22px; flex: none; }
+    .brand.drmuller { color: inherit; font-family: "DM Sans", sans-serif; font-size: clamp(19px, 2.5vw, 26px); font-weight: 700; letter-spacing: -.055em; white-space: nowrap; }
+    .brand.drmuller span { color: var(--sun); font-weight: 500; }
+    @media (max-width: 720px) {
+      .page { padding-inline: 18px; }
+      .masthead { min-height: 76px; }
+      main { padding-top: 19px; }
+      .products { grid-template-columns: 1fr; gap: 24px; }
+      .product { width: min(100%, 540px); justify-self: center; }
+      .soon { margin: 5px 0 0; }
+      .tagline { margin: 12px 0 26px; }
+      .contact { margin-top: 28px; }
+      .brands { min-height: 96px; margin-top: 50px; flex-wrap: wrap; gap: 18px clamp(20px, 6vw, 42px); }
+    }
+    @media (max-width: 380px) {
+      .page { padding-inline: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="wordmark">
+        <svg class="sun-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="7" fill="currentColor"/>
+          <path d="M20 2.5v4M20 33.5v4M2.5 20h4M33.5 20h4M7.63 7.63l2.83 2.83m19.08 19.08 2.83 2.83m0-24.74-2.83 2.83m-19.08 19.08-2.83 2.83" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="12.5" stroke="currentColor" stroke-width="1.3" opacity=".42"/>
+        </svg>
+        <span class="name">Solarium<span>.ge</span></span>
+      </div>
+    </header>
+    <main>
+      <h1 class="soon">Coming Soon...</h1>
+      <p class="tagline">Georgia&#39;s Leading Tanning Equipment Importer</p>
+      <section class="products" aria-label="ჰორიზონტალური სოლარიუმი">
 
-      * {
-        box-sizing: border-box;
-      }
+        <figure class="product">
+          <div class="product-art"><img src="solarium-horizontal-crystal.png" alt="ჰორიზონტალური სოლარიუმის საილუსტრაციო რენდერი"></div>
+        </figure>
 
-      html {
-        min-width: 320px;
-        background: var(--ink);
-      }
-
-      body {
-        min-height: 100svh;
-        margin: 0;
-        color: var(--cream);
-        background: var(--ink);
-        font-family: "Noto Sans Georgian", sans-serif;
-      }
-
-      .landing {
-        position: relative;
-        isolation: isolate;
-        min-height: 100svh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: clamp(1.5rem, 4vw, 3.25rem) clamp(1.5rem, 6vw, 6.5rem);
-        overflow: hidden;
-      }
-
-      /* The generated artwork remains quiet under the copy; the left-side shade protects readability. */
-      .scene,
-      .landing::before,
-      .landing::after {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-      }
-
-      .scene {
-        z-index: -3;
-        background: url("./hero-light-installation.png") 60% center / cover no-repeat;
-        animation: scene-drift 20s ease-in-out infinite alternate;
-        transform: scale(1.025);
-      }
-
-      .landing::before {
-        z-index: -2;
-        content: "";
-        background:
-          linear-gradient(90deg, rgba(3, 18, 23, 0.98) 0%, rgba(3, 18, 23, 0.89) 27%, rgba(3, 18, 23, 0.56) 51%, rgba(3, 18, 23, 0.08) 76%),
-          linear-gradient(0deg, rgba(2, 14, 18, 0.58), transparent 46%);
-      }
-
-      .landing::after {
-        z-index: -1;
-        content: "";
-        background: radial-gradient(ellipse at 76% 0%, rgba(252, 194, 104, 0.14), transparent 35%);
-      }
-
-      @keyframes scene-drift {
-        from {
-          background-position: 58% center;
-        }
-
-        to {
-          background-position: 63% center;
-        }
-      }
-
-      /* Mobile needs a different crop: move the installation into frame instead of replaying the desktop crop. */
-      @keyframes scene-drift-mobile {
-        from {
-          background-position: 80% center;
-        }
-
-        to {
-          background-position: 85% center;
-        }
-      }
-
-      .wordmark {
-        width: fit-content;
-        color: var(--cream);
-        font-family: "Manrope", sans-serif;
-        font-size: clamp(1.15rem, 2vw, 1.4rem);
-        font-weight: 800;
-        letter-spacing: -0.075em;
-        line-height: 1;
-        text-transform: lowercase;
-      }
-
-      .wordmark::after {
-        content: "";
-        width: 2.45rem;
-        height: 2px;
-        display: block;
-        margin-top: 0.8rem;
-        background: var(--gold);
-      }
-
-      .hero {
-        width: min(100%, 40rem);
-        margin: auto 0;
-        padding: 4rem 0 3rem;
-      }
-
-      h1,
-      p {
-        margin: 0;
-      }
-
-      h1 {
-        max-width: 8ch;
-        color: var(--cream);
-        font-size: clamp(3.45rem, 9.2vw, 7.6rem);
-        font-weight: 800;
-        letter-spacing: -0.09em;
-        line-height: 0.97;
-      }
-
-      .statement {
-        max-width: 34rem;
-        margin-top: clamp(1.5rem, 3vw, 2.15rem);
-        color: var(--muted);
-        font-size: clamp(1rem, 1.85vw, 1.22rem);
-        font-weight: 500;
-        line-height: 1.72;
-      }
-
-      .contact {
-        width: fit-content;
-        margin-top: clamp(2.25rem, 5vw, 4.4rem);
-        display: inline-grid;
-        grid-template-columns: auto 1fr;
-        align-items: center;
-        gap: 0.82rem;
-        padding: 0.42rem 1.25rem 0.42rem 0.45rem;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 0.55rem;
-        background: rgba(1, 13, 17, 0.42);
-        color: var(--cream);
-        font-family: "Manrope", "Noto Sans Georgian", sans-serif;
-        font-size: 0.98rem;
-        font-weight: 700;
-        letter-spacing: -0.025em;
-        text-decoration: none;
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
-      }
-
-      .contact:hover {
-        transform: translateY(-2px);
-        border-color: rgba(101, 242, 160, 0.8);
-        background: rgba(21, 131, 78, 0.4);
-      }
-
-      .contact:focus-visible {
-        outline: 3px solid var(--gold);
-        outline-offset: 4px;
-      }
-
-      .whatsapp-icon {
-        width: 2.45rem;
-        height: 2.45rem;
-        padding: 0.53rem;
-        border-radius: 0.34rem;
-        background: var(--green);
-        color: white;
-      }
-
-      .contact:hover .whatsapp-icon {
-        background: var(--green-bright);
-      }
-
-      @media (max-width: 680px) {
-        .landing {
-          padding: 1.5rem;
-        }
-
-        .scene {
-          background-position: 82% center;
-          animation-name: scene-drift-mobile;
-        }
-
-        .landing::before {
-          background:
-            linear-gradient(0deg, rgba(2, 14, 18, 0.94) 0%, rgba(2, 14, 18, 0.78) 24%, rgba(2, 14, 18, 0.18) 60%, rgba(2, 14, 18, 0.12) 100%),
-            linear-gradient(90deg, rgba(3, 18, 23, 0.8) 0%, rgba(3, 18, 23, 0.44) 55%, rgba(3, 18, 23, 0.08) 100%);
-        }
-
-        .hero {
-          margin: auto 0 0;
-          padding: 3.5rem 0 2rem;
-        }
-
-        h1 {
-          font-size: clamp(3.45rem, 16vw, 5.2rem);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .scene {
-          animation: none;
-        }
-
-        .contact {
-          transition: none;
-        }
-
-        .contact:hover {
-          transform: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main class="landing">
-      <div class="scene" aria-hidden="true"></div>
-
-      <div class="wordmark" aria-label="solarium.ge">solarium.ge</div>
-
-      <section class="hero" aria-label="მალე">
-        <h1>მალე…</h1>
-        <p class="statement">სოლარიუმების ყველაზე დიდი იმპორტიორი საქართველოში</p>
-
-        <a
-          class="contact"
-          href="https://wa.me/995596919191"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="მოგვწერეთ WhatsApp-ზე: 596 91 91 91"
-        >
-          <!-- Inline SVG keeps the WhatsApp action crisp and removes a separate icon dependency. -->
-          <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d="M20.52 3.48A11.84 11.84 0 0 0 12.08 0C5.53 0 .2 5.33.2 11.88c0 2.09.55 4.13 1.58 5.92L.1 24l6.36-1.67a11.84 11.84 0 0 0 5.61 1.43h.01c6.54 0 11.87-5.33 11.87-11.88 0-3.17-1.23-6.15-3.43-8.4ZM12.08 21.76c-1.8 0-3.56-.48-5.1-1.39l-.37-.22-3.77.99 1.01-3.68-.24-.38a9.82 9.82 0 0 1-1.5-5.2c0-5.51 4.48-9.99 9.99-9.99 2.66 0 5.16 1.04 7.04 2.93a9.92 9.92 0 0 1 2.91 7.05c0 5.51-4.48 9.99-9.98 9.99Zm5.47-7.49c-.3-.15-1.79-.88-2.07-.98-.28-.1-.48-.15-.69.15-.2.3-.79.98-.97 1.18-.18.2-.36.22-.66.07-.3-.15-1.28-.47-2.43-1.5-.9-.81-1.51-1.82-1.69-2.12-.18-.3-.02-.46.13-.61.13-.13.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.69-1.66-.94-2.27-.25-.6-.5-.52-.69-.53h-.59c-.2 0-.52.08-.79.38-.28.3-1.04 1.01-1.04 2.46s1.07 2.86 1.22 3.06c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.49 1.69.63.71.23 1.35.2 1.86.12.57-.09 1.79-.73 2.04-1.44.25-.71.25-1.32.18-1.44-.07-.13-.27-.2-.57-.35Z"
-            />
-          </svg>
-          <span>596 91 91 91</span>
-        </a>
+      </section>
+      <section class="contact" aria-label="საკონტაქტო ინფორმაცია">
+        <div class="email">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.25" y="5.25" width="17.5" height="13.5" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="m4.5 7 7.5 6 7.5-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>hi@solarium.ge</span>
+        </div>
+        <div class="phone">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.08 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>596919191</span>
+        </div>
+      </section>
+      <section class="brands" aria-label="წარმოდგენილი ბრენდები">
+        <div class="brand ergoline">ergoline</div>
+        <div class="brand megasun">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="#d9a650"/><circle cx="16" cy="16" r="8.5" fill="#f8f8f5"/><circle cx="16" cy="16" r="3.5" fill="#d9a650"/></svg>
+          <span>mega<span class="sun-word">Sun</span></span><sup>®</sup>
+        </div>
+        <div class="brand luxura">LUXURA<small>BY HAPRO</small></div>
+        <div class="brand soltron">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="#d9a650"/><circle cx="16" cy="16" r="8.5" fill="#f8f8f5"/><circle cx="16" cy="16" r="4" fill="#d9a650"/></svg>
+          <span>soltron</span>
+        </div>
+        <div class="brand drmuller">DR. <span>MÜLLER</span></div>
       </section>
     </main>
-  </body>
+  </div>
+</body>
 </html>
